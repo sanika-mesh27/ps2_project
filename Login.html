@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+    <nav>
+        <div class="navlist">
+            <ul>
+                <li> <a href="Home.html">Home</a></li>
+                <li> <a href="Login.html">Login</a></li>
+
+            </ul>
+        </div>
+    </nav>
+  <div class="wrapper">
+    <form action="#">
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text"  id="email" placeholder="email" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" placeholder="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+       
+      </div>
+      
+      <button type="submit"  onclick=" return storage()" >Log In</button></a>
+      <div class="register">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  function storage(){
+    
+  var em=document.getElementById("email").value;
+  var passd=document.getElementById("password").value;
+  var mail=localStorage.setItem("em",em);
+  var pass=localStorage.setItem("passd",passd);
+  if(em== " "|| passd==" "){
+    alert("Please fill in all fields");
+      return false;
+  }
+  if(em =="example@gmail.com" || passd =="1234567890"){
+    localStorage.setItem("em",em);
+      localStorage.setItem("passd",passd);
+      alert("login successful");
+     window.location.assign('sidenavigation.html');
+      return true;
+    } else {
+      alert("Invalid Username");
+      return false
+    }
+  }
+</script>
+</html>
